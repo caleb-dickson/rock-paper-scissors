@@ -1,4 +1,4 @@
-function playRound(playerSelection, round) {
+function playGame(playerSelection, round) {
     console.log("Round " + round);
     const computerSelection = computerPlay();
     console.log(`Your selection is ${playerSelection}`);
@@ -21,8 +21,8 @@ function playRound(playerSelection, round) {
     const lose = "You Lose! Paper beats Rock";
     let playerScore = 0;
     let computerScore = 0;
-    for (let i = 1; i < 4; i++) {
-      const result = playRound(playerSelection, i);
+    for (let i = 1; i < 20; i++) {
+      const result = playGame(playerSelection, i);
       switch (result) {
         case 'win':
           console.log(win);
@@ -37,15 +37,16 @@ function playRound(playerSelection, round) {
           break;
       }
     }
-    console.log("Final Results: Player: " + playerScore + " Computer: " + computerScore);
-    if (playerScore > computerScore) {
-      console.log("You win the game!");
-    } else if (playerScore < computerScore) {
-      console.log("You lose the game.");
-    } else {
-      console.log("The game was an overall tie.");
-    }
+        console.log("Final Results: Player: " + playerScore + " Computer: " + computerScore);
+        if (playerScore > computerScore) {
+          console.log("You win the game!");
+        } else if (playerScore < computerScore) {
+          console.log("You lose the game.");
+        } else {
+          console.log("The game was an overall tie.");
+        }
   }
+
   
   function computerPlay() {
     let choices = ["Rock", "Paper", "Scissors"];
@@ -53,5 +54,5 @@ function playRound(playerSelection, round) {
     return choice;
   }
 
-const playerSelection = "Rock";
+const playerSelection = 'Rock';
 game();
