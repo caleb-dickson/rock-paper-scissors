@@ -1,32 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>JavaScript Practice</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-
-    <div class='page-title'>Rock Paper Scissors</div>
-    
-    <div class='game-data-container'></div>
-        <div class='rounds-counter'></div>
-            <div class='current-score'></div>
-        <div class='final-score'></div>
-            <div class='winner'></div>
-    <div class='game-container'>
-        <div class='player-container'>
-            <button class='Rock'><img class='rock-img' src='./img/rock.png'></button>
-            <button class='Paper'><img class='paper-img' src='./img/paper.png';></button>
-            <button class='Scissors'><img class='scissors-img' src='./img/scissors.png';></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">ROCK PAPER SCISSORS</h1>
+    </header>
+    <main class="main">
+      <div class="scoreboard">
+        <h2 class="score-info" id="scoreInfo">Let's Play!</h2>
+        <h3 class="score-message" id="scoreMessage">
+          First player to score 5 points wins
+        </h3>
+        <div class="scores-container">
+          <div class="score-box">
+            <div class="sign" id="playerSign">-</div>
+            <p class="score" id="playerScore">Player: 0</p>
+          </div>
+          <div class="score-box">
+            <div class="sign" id="computerSign">-</div>
+            <p class="score" id="computerScore">Computer: 0</p>
+          </div>
         </div>
-        <div class='versus'>VS.</div>
-        <div><img class='comp-icon' src='./img/computer.png'></div>
+      </div>
+      <div class="buttons">
+        <button class="btn btn-square" id="rockBtn">
+          <div class="sign">✊</div>
+        </button>
+        <button class="btn btn-square" id="paperBtn">
+          <div class="sign">✋</div>
+        </button>
+        <button class="btn btn-square" id="scissorsBtn">
+          <div class="sign">✌</div>
+        </button>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        cdickson21
+      </p>
+      <a href="https://github.com/cdickson21" target="_blank">GitHub</a>
+    </footer>
+    <div class="modal" id="endgameModal">
+      <p class="modal-title" id="endgameMsg"></p>
+      <button class="btn btn-restart" id="restartBtn">Play again</button>
     </div>
-
-
-
-<script src="script.js"></script>
-</body>
+    <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
+  </body>
 </html>
