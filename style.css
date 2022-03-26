@@ -69,7 +69,6 @@ button {
 
 .btn {
   border-radius: 10px;
-  background-color: var(--secondary-dark);
 }
 
 .btn-square {
@@ -78,7 +77,7 @@ button {
 }
 
 .btn:hover {
-  background-color: var(--secondary-dark-hover);
+  background-color: #04213b;
 }
 
 .btn:active {
@@ -89,20 +88,15 @@ button {
   font-size: 80px;
 }
 
+.spacer {
+  height: 25.3vh;
+}
+
 /* FOOTER */
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
   padding: 10px;
-  color: #a1a1a1;
-  font-size: 20px;
+  background-color: #001427;
 }
 
 .icons8-github { 
@@ -116,7 +110,7 @@ button {
 .code-review {
   font-size: .8rem;
   text-decoration: none;
-  color: #6C757D;
+  /* color: #6C757D; */
 }
 
 .modal {

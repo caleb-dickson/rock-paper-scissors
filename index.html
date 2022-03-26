@@ -47,6 +47,7 @@
         </div>
       </div>
 
+      
       <div class="buttons">
         <button class="btn btn-square" id="rockBtn">
           <div class="icon">✊</div>
@@ -58,25 +59,29 @@
           <div class="icon">✌</div>
         </button>
       </div>
+      <div class="spacer mb-auto"></div>
     </main>
+    
 
-    <footer class="footer text-center">
-      <p>
-        Copyright ©
-        <script>
-          document.write(new Date().getFullYear());
-        </script>
-        Caleb Dickson
-      </p>
-      <a
-      class="code-review ms-4"
-      target="_blank"
-      rel="noopener noreferrer"
-      href="https://github.com/tacDev-io/rock-paper-scissors"
-      >
-      <span class="icons8-github"></span>
-      <p class="">Review this code on Github</p>
-    </a>
+    <footer class="footer text-center text-white">
+      <div class="container d-flex justify-content-center align-items-center">
+        <p>
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Caleb Dickson
+        </p>
+        <a
+        class="d-flex align-items-center code-review ms-4 text-white"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/tacDev-io/rock-paper-scissors"
+        >
+        <p class="me-4">Review this code on Github</p>
+        <span class="icons8-github"></span>
+      </a>
+      </div>
     </footer>
 
     <div class="modal fade" id="endgameModal" tabindex="-1" aria-hidden="true">
