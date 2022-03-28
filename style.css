@@ -23,15 +23,17 @@ button {
 /* HEADER */
 
 .header {
-  display: flex;
-  justify-content: center;
+  background-color: #001427;
   padding: 40px 0px;
-  background-color: #6C757D;
 }
 
 .title {
   font-size: 32px;
   color: white;
+}
+
+#round {
+  margin-bottom: 4rem;
 }
 
 .scoreboard {
@@ -86,6 +88,14 @@ button {
 
 .icon {
   font-size: 80px;
+}
+
+.overall-scoreboard {
+  margin-top: 15vh;
+}
+
+#rounded {
+  border-radius: 24px !important;
 }
 
 .spacer {
