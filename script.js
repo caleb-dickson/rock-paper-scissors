@@ -1,4 +1,5 @@
 // DOM SELECTORS
+// DOM SELECTORS
 const scoreInfo = document.getElementById("scoreInfo");
 const scoreMessage = document.getElementById("scoreMessage");
 const currentRoundPara = document.getElementById("currentGame");
@@ -18,29 +19,39 @@ const scissorsBtn = document.getElementById("scissorsBtn");
 
 const endgameModal = document.getElementById("endgameModal");
 const endgameMsg = document.getElementById("endgameMsg");
-const endgameGraphic = document.getElementById("endgameGraphic"); 
+const endgameGraphic = document.getElementById("endgameGraphic");
 const overlay = document.getElementById("overlay");
 const restartBtn = document.getElementById("restartBtn");
 // DOM SELECTORS
+// DOM SELECTORS
 
+// EVENT LISTENERS
 // EVENT LISTENERS
 rockBtn.addEventListener("click", () => handleClick("Rock"));
 paperBtn.addEventListener("click", () => handleClick("Paper"));
 scissorsBtn.addEventListener("click", () => handleClick("Scissors"));
 restartBtn.addEventListener("click", () => restart());
 // EVENT LISTENERS
+// EVENT LISTENERS
 
+// GLOBAL VARIABLES
 // GLOBAL VARIABLES
 let playerRoundScore = 0;
 let computerRoundScore = 0;
+
 let playerTotalScore = 0;
 let computerTotalScore = 0;
+
 let roundWinner = "";
 let roundsPlayed = 0;
 let currentRound = 1;
+
 let tiedMessage;
 // GLOBAL VARIABLES
+// GLOBAL VARIABLES
 
+// GAME LOGIC
+// GAME LOGIC
 function handleClick(playerSelection) {
   if (isGameOver()) {
     openEndgameModal();
@@ -77,6 +88,7 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "Scissors" && computerSelection === "Paper") ||
     (playerSelection === "Paper" && computerSelection === "Rock")
   ) {
+    clearTimeout(this.tiedMessage);
     playerRoundScore++;
     roundWinner = "player";
   }
@@ -85,6 +97,7 @@ function playRound(playerSelection, computerSelection) {
     (computerSelection === "Scissors" && playerSelection === "Paper") ||
     (computerSelection === "Paper" && playerSelection === "Rock")
   ) {
+    clearTimeout(this.tiedMessage);
     computerRoundScore++;
     roundWinner = "computer";
   }
@@ -94,6 +107,7 @@ function playRound(playerSelection, computerSelection) {
 function scoreUpdate() {
   if (roundWinner === "tie") {
     scoreInfo.textContent = "It's a tie!";
+    scoreMessage.textContent = "Tied!";
     this.tiedMessage = setTimeout(() => {
       scoreMessage.textContent = "Play again!";
     }, 1000);
@@ -102,7 +116,6 @@ function scoreUpdate() {
   } else if (roundWinner === "computer") {
     scoreInfo.textContent = "You lost!";
   }
-
   playerScorePara.textContent = "Player: " + playerRoundScore;
   computerScorePara.textContent = "Computer: " + computerRoundScore;
 }
@@ -153,7 +166,6 @@ function openEndgameModal() {
   clearTimeout(this.tiedMessage);
   console.log();
   endgameModal.classList.add("show");
-  restartBtn.textContent = "Play Again";
 }
 
 function closeEndgameModal() {
@@ -174,13 +186,6 @@ function setFinalMessage() {
 }
 
 function restart() {
-  // if (endgameMsg.textContent = "You won!  🥳") {
-  //   playerTotalScore + 1;
-  //   playerTotalScorePara.textContent = playerTotalScore;
-  // } else {
-  //   computerTotalScore + 1;
-  //   computerTotalScorePara.textContent = computerTotalScore;
-  // }
   playerRoundScore = 0;
   computerRoundScore = 0;
   roundsPlayed++;
@@ -196,3 +201,5 @@ function restart() {
   computerChoice.textContent = "⌀";
   endgameModal.classList.remove("show");
 }
+// GAME LOGIC
+// GAME LOGIC
